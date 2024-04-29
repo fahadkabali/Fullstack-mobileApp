@@ -1,6 +1,8 @@
 export default {
     BLACK:'#000000',
     PRIMARY:'#8E3FFF',
+    PRIMARY_LIGHT:'#CBC3E3',
+    PRIMARY_DARK:'#59259F',
     BLUE:'#0000FF',
     YELLOW:'#FFFF00',
     ORANGE:'#FFA500',
