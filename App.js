@@ -4,6 +4,7 @@ import Login from './App/Screens/LoginScreen/Login';
 // import * as dotenv from 'react-native-dotenv';
 import { ClerkProvider,SignedIn, SignedOut } from '@clerk/clerk-expo';
 import TabNavigation from './App/Navigations/TabNavigation';
+import * as Linking from 'expo-linking';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; // Import for creating tab navigation
 import { NavigationContainer, NavigationRouteContext } from '@react-navigation/native'; // Import for Navigation Container
 
@@ -43,9 +44,7 @@ export default function App() {
     >
       <View style={styles.container}>
         <SignedIn>
-          <NavigationRouteContext>
             <TabNavigation/>
-          </NavigationRouteContext>
         </SignedIn>
         <SignedOut>
           <Login/>

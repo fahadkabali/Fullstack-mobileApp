@@ -3,6 +3,8 @@ import React from 'react'
 import Header from './Header/Header'
 import Slider from './Slider'
 import Categories from './Categories'
+import BusinessList from './BusinessList'
+
 
 export default function HomeScreen() {
   return (
@@ -16,6 +18,9 @@ export default function HomeScreen() {
         
         {/* categories */}
         <Categories/>
+
+        {/* business list */}
+        <BusinessList/>
       </View>
     </View>
   )

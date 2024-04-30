@@ -6,12 +6,14 @@ import HomeScreen from '../Screens/HomeScreen/HomeScreen';
 import BookingScreen from '../Screens/BookingScreen/BookingScreen';
 import Colors from '../Utils/Colors';
 import { FontAwesome } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
+    <NavigationContainer>
     <Tab.Navigator screenOptions={{
       headerShown:false,
       tabBarActiveTintColor:Colors.PRIMARY
@@ -47,5 +49,6 @@ export default function TabNavigation() {
         }}
       />
     </Tab.Navigator>
+    </NavigationContainer>
   )
 }
