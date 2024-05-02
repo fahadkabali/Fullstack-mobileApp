@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Utils/GlobalApi'
 import Heading from '../../components/Heading'
 import Colors from '../../Utils/Colors'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Categories() {
     const [categories, setCategories] = useState([])
+    const navigation = useNavigation()
     useEffect(()=>{
         getCatogeries()
     },[])
@@ -22,14 +24,19 @@ export default function Categories() {
         data={categories}
         numColumns={4}
         renderItem={({item})=> index <= 2 && (
-            <View STYLE={styles.stylesContainer}>
+            <TouchableOpacity style={styles.stylesContainer}
+                onPress = {()=>navigation.push('business-list',{
+                    category:item.name
+                })}
+                
+            >
                 <View style={StyleSheet.iconContainer}>
                     <Image source={{uri:item?.icon?.url}}
                     style={{width:30, height:30}}
                     />
                 </View>
                 <Text style ={{fontFamily:'outfit-medium', marginTop:5}}>{item?.name}</Text>
-            </View>
+            </TouchableOpacity>
         )}
         />
     </View>

@@ -11,8 +11,8 @@ export default function BusinessLIstItem({business}) {
         />
         <View sytle={styles.infoContainer}>
             <Text style={styles.name}>{business?.name}</Text>
-            <Text style={styles.person}>{business?.person}</Text>
-            <Text style={styles.category}>{business?.sliderCategories.name}</Text>
+            <Text style={styles.person}>{business?.contactPerson}</Text>
+            <Text style={styles.category}>{business?.sliderCategory.name}</Text>
         </View>
     </View>
   )
