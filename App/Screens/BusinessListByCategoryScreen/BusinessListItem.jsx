@@ -2,10 +2,16 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import Colors from '../../Utils/Colors'
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function BusinessListItem({business}) {
+    const navigation = useNavigation
   return (
-    <View style={styles.container}> 
+    <TouchableOpacity style={styles.container} onPress ={()=>navigation.push('business-detail', 
+        {
+            business:business
+        }
+    )}> 
         <Image source ={{uri:business?.images[0]?.url}}
         style={StyleSheet.image} 
         />
@@ -16,7 +22,7 @@ export default function BusinessListItem({business}) {
                 <Ionicons name ='ios-location-sharp' size={20} color={Colors.PRIMARY}/>
                 {business.address}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
     },
     subContainer:{
         display:'flex',
-        gap:'10'
+        gap:7
     },
     image:{
         width:100,
