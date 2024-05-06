@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     marginTop:15,
     flexDirection: 'row',
     alignItems: 'center',
-    gap:10,
     marginBottom:12,
+    gap:4
   },
   textInput:{
     padding: 10,
@@ -35,15 +35,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
     width:'85%',
     marginVertical: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 4,
     fontSize:17,
     fontFamily:'outfit'
 
   },
   searchBtn:{
-    padding: 10,
+    padding: 12,
     borderRadius: 10,
-    paddingHorizontal:16,
+    paddingHorizontal:11,
     backgroundColor: Colors.WHITE,
   }
 })

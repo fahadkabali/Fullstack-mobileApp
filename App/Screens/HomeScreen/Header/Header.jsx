@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { useUser } from '@clerk/clerk-expo'
 import Colors from '../../../Utils/Colors'
@@ -14,7 +14,7 @@ export default function Header() {
   return (
     user && (
         <View style={styles.container}>
-            <View>
+            <View style={styles.profileMainContainer}>
             <View style={styles.profileContainer}>
                 <Image source={{uri:user?.imageUrl}}
                 style={StyleSheet.Profileimage}
@@ -24,7 +24,7 @@ export default function Header() {
                     <Text style={styles.fullNameText}>{user?.fullName}</Text>
                 </View>
             </View>
-            <FontAwesome name="bookmark-o" size={30} color={Colors.WHITE} />
+            <FontAwesome name="bookmark-o" size={27} color={Colors.WHITE} />
             </View>
             <Search/>
         </View>

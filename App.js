@@ -6,7 +6,6 @@ import { ClerkProvider,SignedIn, SignedOut } from '@clerk/clerk-expo';
 import TabNavigation from './App/Navigations/TabNavigation';
 import * as Linking from 'expo-linking';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; // Import for creating tab navigation
-import { NavigationContainer, NavigationRouteContext } from '@react-navigation/native'; // Import for Navigation Container
 
 import { useFonts } from 'expo-font';
 
@@ -39,7 +38,7 @@ export default function App() {
 
   return (
     <ClerkProvider 
-    tokenCache={tokenCache}
+    // tokenCache={tokenCache}
     publishableKey={expoKey}
     >
       <View style={styles.container}>
