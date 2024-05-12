@@ -6,6 +6,7 @@ import Colors from '../../Utils/Colors';
 import Heading from '../../components/Heading';
 import BusinessPhotos from './BusinessPhotos';
 import BusinessAbout from './BusinessAbout';
+import BookingModal from './BookingModal';
 
 export default function BusinessDetailScreen() {
   const param = useRouter().params
@@ -51,7 +52,9 @@ export default function BusinessDetailScreen() {
             fontSize:18
           }}>Message</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.bookingBtn}>
+        <TouchableOpacity style={styles.bookingBtn}
+        onPress={()=>setShowModal(true)}
+        >
           <Text style={{
             textAlign:'center',
             fontFamily:'outfit-medium',
@@ -64,7 +67,8 @@ export default function BusinessDetailScreen() {
       animationType='slide'
       visible={showModal}
       >
-        <Text>Booking</Text>
+        {/* <Text>Booking</Text> */}
+        <BookingModal hideModal={() => setShowModal(false)}/>
       </Modal>
     </View>
   )

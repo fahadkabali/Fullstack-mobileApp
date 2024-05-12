@@ -1,6 +1,8 @@
 import { View, Text, FlatList, Image } from 'react-native'
 import React from 'react'
 import Heading from '../../components/Heading'
+import { Ionicons } from '@expo/vector-icons';
+
 
 export default function BusinessPhotos(busines) {
   return (
