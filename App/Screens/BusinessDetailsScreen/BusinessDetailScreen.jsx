@@ -68,7 +68,9 @@ export default function BusinessDetailScreen() {
       visible={showModal}
       >
         {/* <Text>Booking</Text> */}
-        <BookingModal hideModal={() => setShowModal(false)}/>
+        <BookingModal 
+        businessId={business.id}
+        hideModal={() => setShowModal(false)}/>
       </Modal>
     </View>
   )
