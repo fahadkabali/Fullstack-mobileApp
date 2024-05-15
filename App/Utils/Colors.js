@@ -11,5 +11,7 @@ export default {
     GREEN:'#008000',
     GRAY:'#808080',
     WHITE:'#FFFFFF',
-    LIGHTGRAY:'#EDEDED'
+    LIGHTGRAY:'#EDEDED',
+    LIGHT_RED:'#FF6666',
+    LIGHT_GREEN:'#004000'
 }

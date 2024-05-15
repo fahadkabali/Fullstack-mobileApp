@@ -4,7 +4,7 @@ import Colors from '../../Utils/Colors'
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-export default function BusinessListItem({business}) {
+export default function BusinessListItem({business, booking}) {
     const navigation = useNavigation
   return (
     <TouchableOpacity style={styles.container} onPress ={()=>navigation.push('business-detail', 
@@ -21,6 +21,7 @@ export default function BusinessListItem({business}) {
             <Text style ={{fontFamily:'outfit', color:Colors.GRAY, fontSize:16}}>
                 <Ionicons name ='ios-location-sharp' size={20} color={Colors.PRIMARY}/>
                 {business.address}</Text>
+                {booking?.id?<Text>Show Booking</Text>:null}
         </View>
     </TouchableOpacity>
   )

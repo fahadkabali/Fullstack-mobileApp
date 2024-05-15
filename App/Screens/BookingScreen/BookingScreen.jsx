@@ -25,7 +25,9 @@ export default function BookingScreen() {
         <FlatList
         data={bookingList}
         renderItem={({item, index})=>(
-          <BusinessListItem business={item?.businessLIst}/>
+          <BusinessListItem business={item?.businessList}
+          booking={item}
+          />
         )}
         />
       </View>
