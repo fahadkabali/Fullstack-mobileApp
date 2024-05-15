@@ -17,6 +17,10 @@ export default function BusinessDetailScreen() {
     // console.log(param?.business)
     // param && setBusiness(param.business)
   },[])
+
+  const onMessageBtnClick = () =>{
+    Linking.openURL('mailto'+business?.email+`?subject=Hello&body=Hi`)
+  }
   return business && (
     <View>
       <ScrollView style={{height:'90%'}}>
@@ -44,7 +48,8 @@ export default function BusinessDetailScreen() {
           <BusinessPhotos business={business}/>
       </ScrollView>
       <View style={{display:'flex', flexDirection:'row',margin:8, gap:5}}>
-        <TouchableOpacity style={styles.messageBtn}>
+        <TouchableOpacity style={styles.messageBtn} 
+        onPress={()=> onMessageBtnClick()}>
           <Text style={{
             textAlign:'center',
             fontFamily:'outfit-medium',
