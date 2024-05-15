@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import Colors from '../../Utils/Colors'
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BusinessListItem({business, booking}) {
@@ -19,9 +19,9 @@ export default function BusinessListItem({business, booking}) {
             <Text style={{fontFamily:'outfit', color:Colors.GRAY, fontSize:15}}>{business.contactPerson}</Text>
             <Text style={{fontFamily:'outfit-bold', fontSize:19}}>{business.name}</Text>
             <Text style ={{fontFamily:'outfit', color:Colors.GRAY, fontSize:16}}>
-                <Ionicons name ='ios-location-sharp' size={20} color={Colors.PRIMARY}/>
+                <AntDesign name ='calendar' size={20} color={Colors.PRIMARY} style={{marginRight:15}}/>
                 {business.address}</Text>
-                {booking?.id?<Text>Show Booking</Text>:null}
+                {booking?.id?<Text>{booking.date}</Text>:null}
         </View>
     </TouchableOpacity>
   )

@@ -7,14 +7,17 @@ import BusinessListItem from '../BusinessListByCategoryScreen/BusinessListItem';
 export default function BookingScreen() {
   const {user} = useUser();
   const [bookingList, setBookingList] = useState([])
+  const [loading, setLoading] =useState(false)
 
   useEffect(()=>{
     user&&getUserBookings()
-  })
+  },[user])
   const getUserBookings = () =>{
+    setLoading(true)
     GlobalApi.getUserBookings(user.primaryEmailAddress.emailAddress).then((resp) => {
       console.log("Resp", resp)
       setBookingList(resp.bookings)
+      setLoading(false)
 
     })
   }
@@ -24,6 +27,8 @@ export default function BookingScreen() {
       <View>
         <FlatList
         data={bookingList}
+        onRefresh={()=>getUserBookings()}
+        refreshing={loading}
         renderItem={({item, index})=>(
           <BusinessListItem business={item?.businessList}
           booking={item}
